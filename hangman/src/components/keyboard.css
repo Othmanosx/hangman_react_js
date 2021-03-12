@@ -22,5 +22,5 @@
 .buttons[disabled]{
   background-color: transparent;
   cursor: not-allowed;
-  opacity: 25%;
+  opacity: 20%;
 }
