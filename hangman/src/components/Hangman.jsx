@@ -3,9 +3,11 @@ import Image from "./Image";
 import "../App.css";
 import './keyboard.css'
 import chalkbutton from './hangman_images/chalkbutton.png';
+import axios from "axios";
+
 
 // import Keyboard from "./Keyboard";
-const axios = require("axios");
+// const axios = require("axios");
 
 export default class Hangman extends Component {
   constructor(props) {
@@ -29,6 +31,8 @@ export default class Hangman extends Component {
         })
       )
       .catch((error) => console.log(error));
+
+      
   }
 
   guessedWord() {
@@ -95,9 +99,7 @@ export default class Hangman extends Component {
             <p>
             {!(this.state.counter >= 6) ? this.guessedWord() : this.state.word}
             </p>
-          {this.guessedWord().join("") === this.state.word
-            ? "YOU WON !! "
-            : null}
+           {this.state.word? this.guessedWord().join("") === this.state.word? "YOU WON !! ": null : 'Loading...'} 
           {this.state.counter >= 6 ? (
             "YOU LOST !!"
           ) : (
