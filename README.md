@@ -27,4 +27,4 @@ npm start or yarn start app start with your port number
 
 Play here
 
-Link : https://hangman-sand-team.netlify.app/
+Link : https://hangman-othman.netlify.app/
