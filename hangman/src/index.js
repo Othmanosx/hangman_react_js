@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import ReactGA from 'react-ga';
+export const initGA = () => {       
+    ReactGA.initialize('G-H5MNH7FL0S');
+    ReactGA.pageview(window.location.pathname + window.location.search);
+} 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App initGA={initGA}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
