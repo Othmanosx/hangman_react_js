@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Hangman from "./components/Hangman";
 
-function App() {
+function App({initGA}) {
+  // eslint-disable-next-line
+  useEffect(() => { initGA(); }, []);
+  
   return (
     <div className="App">
       <Hangman />
