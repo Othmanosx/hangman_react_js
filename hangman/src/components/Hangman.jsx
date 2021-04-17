@@ -64,10 +64,7 @@ export default class Hangman extends Component {
 
   resetButton = () => {
     this.componentDidMount();
-    ReactGA.event({
-      category: "Game Reset",
-      action: "Game Reloads",
-    });
+    this.Event("RESET", `Play Again button pressed`, "Play_Again");
   };
 
   generateButtons = () => {
