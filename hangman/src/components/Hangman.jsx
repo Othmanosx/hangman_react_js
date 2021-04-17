@@ -4,7 +4,6 @@ import "../App.css";
 import "./keyboard.css";
 import chalkbutton from "./hangman_images/chalkbutton.png";
 import axios from "axios";
-import ReactGA from "react-ga";
 
 // import Keyboard from "./Keyboard";
 // const axios = require("axios");
@@ -19,13 +18,6 @@ export default class Hangman extends Component {
       guessed: [],
     };
   }
-  Event = (category, action, label) => {
-    ReactGA.event({
-      category: category,
-      action: action,
-      label: label,
-    });
-  };
   componentDidMount() {
     axios
       .get("https://random-word-api.herokuapp.com/word?number=1")
@@ -59,12 +51,10 @@ export default class Hangman extends Component {
         guessed: [...this.state.guessed, value],
       });
     }
-    this.Event("KEYBOARD", `Letter ${e} pressed`, `${e}`);
   };
 
   resetButton = () => {
     this.componentDidMount();
-    this.Event("RESET", `Play Again button pressed`, "Play_Again");
   };
 
   generateButtons = () => {

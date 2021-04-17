@@ -1,17 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Hangman from "./components/Hangman";
-import ReactGA from "react-ga";
 
-function App({ initGA }) {
-  const PageView = () => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  };
-
-  useEffect(() => {
-    initGA();
-    PageView();
-  }, [initGA]);
-
+function App() {
   return (
     <div className="App">
       <Hangman />

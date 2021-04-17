@@ -3,14 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import ReactGA from "react-ga";
-export const initGA = () => {
-  ReactGA.initialize("G-H5MNH7FL0S");
-};
 
 ReactDOM.render(
   <React.StrictMode>
-    <App initGA={initGA} />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
