@@ -19,7 +19,13 @@ export default class Hangman extends Component {
       guessed: [],
     };
   }
-
+  Event = (category, action, label) => {
+    ReactGA.event({
+      category: category,
+      action: action,
+      label: label,
+    });
+  };
   componentDidMount() {
     axios
       .get("https://random-word-api.herokuapp.com/word?number=1")
@@ -53,10 +59,7 @@ export default class Hangman extends Component {
         guessed: [...this.state.guessed, value],
       });
     }
-    ReactGA.event({
-      category: "Keyboard",
-      action: `pressed button ${e}`,
-    });
+    this.Event("KEYBOARD", `Letter ${e} pressed`, `${e}`);
   };
 
   resetButton = () => {
